@@ -1,0 +1,13 @@
+// Import Inter Font Family
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import './generic/variables';
+@import './generic/typography';
+
+
+html,
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+}
+
