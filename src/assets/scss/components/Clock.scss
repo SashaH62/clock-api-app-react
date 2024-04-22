@@ -1,0 +1,14 @@
+@import '../generic/variables';
+
+.clock-container {
+    margin-top: auto;
+
+    h1, h3, h4 {
+        color: $white_color;
+        text-transform: uppercase;
+    }
+
+    .timezone {
+        font-size: 40px;
+    }
+}
