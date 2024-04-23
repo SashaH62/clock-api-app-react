@@ -1,18 +1,18 @@
 import { Container } from "./Container";
 import { InfoCard } from "./InfoCard";
 
-export const AdditionalInfo = ({ backgroundClass }) => {
-  return (
+export const AdditionalInfo = ({ timezone, dayOfYear, dayOfWeek, weekNumber, backgroundClass }) => {
+    return (
     <Container
       containerClass={`additional-info-window container--secondary ${backgroundClass}`}
     >
       <div className="col">
-        <InfoCard heading={"Current Timezone"} value={"Europe/London"} />
-        <InfoCard heading={"Day of the year"} value={"295"} />
+        <InfoCard heading={"Current Timezone"} value={timezone} />
+        <InfoCard heading={"Day of the year"} value={dayOfYear} />
       </div>
       <div className="col">
-        <InfoCard heading={"Day of the week"} value={"5"} />
-        <InfoCard heading={"Week number"} value={"42"} />
+        <InfoCard heading={"Day of the week"} value={dayOfWeek} />
+        <InfoCard heading={"Week number"} value={weekNumber} />
       </div>
     </Container>
   );

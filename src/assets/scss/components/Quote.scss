@@ -3,4 +3,12 @@
 .quote-container {
     width: 100%;
     color: $white_color;
+
+    p {
+        margin-bottom: 1rem;
+        
+        @media (min-width: 1024px) {
+            max-width: 40%;
+        }
+    }
 }

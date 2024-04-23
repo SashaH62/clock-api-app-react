@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Loading } from "../App";
 import "../assets/scss/components/Quote.scss";
 
 export const Quote = () => {
-  const [quoteContent, setQuoteContent] = useState("");
-  const [quoteAuthor, setQuoteAuthor] = useState("");
+  const quoteContent = useRef('')
+  const quoteAuthor = useRef('')
   const [isLoading, setIsLoading] = useState(false);
 
   async function getQuote() {
@@ -14,8 +14,8 @@ export const Quote = () => {
       const res = await fetch("https://api.quotable.io/random");
       const data = await res.json();
 
-      setQuoteAuthor(data.author);
-      setQuoteContent(data.content);
+      quoteAuthor.current = data.author;
+      quoteContent.current = data.content;
     } catch (err) {
       console.error(err);
     } finally {
@@ -33,8 +33,8 @@ export const Quote = () => {
         <Loading />
       ) : (
         <>
-          <p>{quoteContent}</p>
-          <h5>{quoteAuthor}</h5>
+          <p>“{quoteContent.current}”</p>
+          <h5>{quoteAuthor.current}</h5>
         </>
       )}
     </header>

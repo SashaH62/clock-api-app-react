@@ -1,0 +1,13 @@
+.info-card {
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    h6 {
+        @media (min-width: 1024px) {
+            margin-bottom: 1.25rem;
+        }
+    }
+}

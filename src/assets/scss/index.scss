@@ -35,4 +35,26 @@ body {
     &.evening {
         background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/desktop/bg-image-nighttime.jpg');
     }
+
+    // Tablet
+    @media (max-width: 991px) {
+        &.morning {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/tablet/bg-image-daytime.jpg');
+        }
+        
+        &.evening {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/tablet/bg-image-nighttime.jpg');
+        }
+    }
+
+    // Mobile
+    @media (max-width: 768px) {
+        &.morning {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/mobile/bg-image-daytime.jpg');
+        }
+        
+        &.evening {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/mobile/bg-image-nighttime.jpg');
+        }
+    }
 }
