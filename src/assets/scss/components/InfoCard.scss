@@ -1,13 +1,28 @@
 .info-card {
-    @media (max-width: 768px) {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  h6 {
+    width: 100%;
+  }
 
-    h6 {
-        @media (min-width: 1024px) {
-            margin-bottom: 1.25rem;
-        }
+  @media (max-width: 576px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      text-align: right;
     }
+  }
+
+  @media (min-width: 577px) {
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    flex-grow: 0;
+  }
+
+  @media (min-width: 992px) {
+    &:nth-of-type(2),
+    &:nth-of-type(4) {
+      padding-left: 5rem;
+    }
+  }
 }

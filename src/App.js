@@ -31,7 +31,7 @@ function App() {
       getTime(timezone, setTimeOfDay, setLocalTime, timeObj);
     }, 5000);
     return () => clearInterval(intervalId);
-  }, [timezone]);
+  }, [timezone, setIsLoading]);
 
   return (
     <div className={`App ${timeOfDay}`}>
@@ -46,20 +46,22 @@ function App() {
         >
           <Location />
         </Clock>
-        <Button clickHandler={handleExpand} btnClass={`primary ${isExpanded ? 'btn--expanded' : ''}`}>
+        <Button
+          clickHandler={handleExpand}
+          btnClass={`primary ${isExpanded ? "btn--expanded" : ""}`}
+        >
           {isExpanded ? "Less" : "More"}
           <img src={Arrow} alt="Arrow Icon" />
         </Button>
       </Container>
-      {isExpanded && (
-        <AdditionalInfo
-          timezone={timezone}
-          dayOfYear={timeObj.current.dayOfYear}
-          dayOfWeek={timeObj.current.dayOfWeek}
-          weekNumber={timeObj.current.weekOfYear}
-          backgroundClass={timeOfDay}
-        />
-      )}
+      <AdditionalInfo
+        timezone={timezone}
+        dayOfYear={timeObj.current.dayOfYear}
+        dayOfWeek={timeObj.current.dayOfWeek}
+        weekNumber={timeObj.current.weekOfYear}
+        backgroundClass={timeOfDay}
+        isVisible={isExpanded}
+      />
     </div>
   );
 }

@@ -1,14 +1,24 @@
-@import '../generic/variables';
+@import "../generic/variables";
 
 .quote-container {
-    width: 100%;
-    color: $white_color;
+  width: 100%;
+  color: $white_color;
+  margin-bottom: auto;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 15px;
+
+  .motion-container--quote {
+    @media (min-width: 1024px) {
+      max-width: 60%;
+    }
 
     p {
-        margin-bottom: 1rem;
-        
-        @media (min-width: 1024px) {
-            max-width: 40%;
-        }
+      margin-bottom: 1rem;
     }
+  }
+
+  .btn {
+    margin-top: 5px;
+  }
 }

@@ -1,60 +1,69 @@
 // Import Inter Font Family
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import './generic/typography';
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import "./generic/typography";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    font-family: 'Inter', sans-serif;
-    min-height: 100dvh;
+  font-family: "Inter", sans-serif;
+  min-height: 100dvh;
+
+  @media (min-width: 1367px) {
+    overflow: hidden;
+  }
 }
 
 #root,
 .App {
-    min-height: 100dvh;
-    height: 1px;
+  min-height: 100dvh;
+  height: 1px;
 }
 
 .App {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+
+  &.morning {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/desktop/bg-image-daytime.jpg");
+  }
+
+  &.evening {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/desktop/bg-image-nighttime.jpg");
+  }
+
+  // Tablet
+  @media (max-width: 991px) {
     &.morning {
-        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/desktop/bg-image-daytime.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/tablet/bg-image-daytime.jpg");
     }
-    
+
     &.evening {
-        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/desktop/bg-image-nighttime.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/tablet/bg-image-nighttime.jpg");
+    }
+  }
+
+  // Mobile
+  @media (max-width: 768px) {
+    &.morning {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/mobile/bg-image-daytime.jpg");
     }
 
-    // Tablet
-    @media (max-width: 991px) {
-        &.morning {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/tablet/bg-image-daytime.jpg');
-        }
-        
-        &.evening {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/tablet/bg-image-nighttime.jpg');
-        }
+    &.evening {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/mobile/bg-image-nighttime.jpg");
     }
-
-    // Mobile
-    @media (max-width: 768px) {
-        &.morning {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/mobile/bg-image-daytime.jpg');
-        }
-        
-        &.evening {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/mobile/bg-image-nighttime.jpg');
-        }
-    }
+  }
 }

@@ -1,56 +1,80 @@
 .container {
-    padding: 5rem 10rem;
+  padding: 5rem 10rem;
+  transition: height 0.3s ease-in-out;
+  min-height: 1px;
 
-    @media (max-width: 768px) {
-        padding: 2rem;
-        flex-direction: column;
+  @media (max-width: 992px) {
+    padding: 4rem;
+  }
+
+  @media (max-width: 576px) {
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &.container--primary {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    flex-grow: 1;
+    justify-content: flex-end;
+
+    @media (max-width: 922px) {
+      flex-direction: column;
     }
+  }
+}
 
-    &.container--primary {
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
-        flex-grow: 1;
-    }
+.motion-container {
+  min-height: 50%;
 
+  @media (max-width: 991px) {
+    min-height: 45%;
+  }
+
+  @media (max-width: 567px) {
+    min-height: 40%;
+  }
+
+  .container {
     &.container--secondary {
-        &.additional-info-window {
-            min-height: 50%;
-            display: flex;
-            width: 100%;
+      &.additional-info-window {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        row-gap: 2rem;
 
-            @media (max-width: 768px) {
-                min-height: 40%;
-            }
-
-            .col {
-                flex-basis: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-
-                @media (min-width: 1024px) {
-                    &:first-child {
-                        border-right: 1px solid rgba(255,255,255, .25)
-                    }
-                    
-                    &:last-child {
-                        padding-left: 10rem;
-                    }
-                }
-            }
-
-            &.morning {
-                background: rgba(255, 255, 255, 0.75);
-                backdrop-filter: blur(20.3871px);
-            }
-
-            &.evening {
-                background: rgba(0, 0, 0, 0.75);
-                backdrop-filter: blur(20.3871px);
-                color: #fff
-            }
+        @media (min-width: 577px) {
+          flex-wrap: wrap;
         }
+
+        &.morning {
+          background: rgba(255, 255, 255, 0.75);
+          backdrop-filter: blur(20.3871px);
+        }
+
+        &.evening {
+          background: rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(20.3871px);
+          color: #fff;
+        }
+
+        &::after {
+          @media (min-width: 992px) {
+            content: "";
+            display: block;
+            position: absolute;
+            height: calc(100% - 8rem);
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.25);
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
     }
-    
+  }
 }
