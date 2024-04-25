@@ -12,7 +12,7 @@ export const useTimeZone = () => {
   ) {
     try {
       const res = await fetch(
-        `http://worldtimeapi.org/api/timezone/${timezone}`
+        `https://worldtimeapi.org/api/timezone/${timezone}`
       );
       const data = await res.json();
       const currTime = new Date(data.utc_datetime);

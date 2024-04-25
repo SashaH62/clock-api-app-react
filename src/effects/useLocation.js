@@ -11,10 +11,10 @@ export const useLocation = () => {
       setIsLoading(true);
   
       try {
-        const res = await fetch(`http://ip-api.com/json/`);
+        const res = await fetch(`https://ipapi.co/json/`);
         const data = await res.json();
         city.current = data.city;
-        country.current = data.country;
+        country.current = data.country_name;
         setTimezone(data.timezone);
       } catch (err) {
         setError(err);
